@@ -36,8 +36,10 @@ function item(value) {
         screen.value = "";
         memory=""
     }
-    else if(value==="%"){
-        screen.value = eval((screen.value))/100;
+    else if(value==="sqrt"){
+        screen.value = Math.sqrt(eval(screen.value));
+        let result = eval(screen.value);
+        screen.value = parseFloat(result.toFixed(6));
     }
     else if(value==="^2"){
         screen.value = eval((screen.value))**2;
