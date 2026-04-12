@@ -9,13 +9,14 @@ function item(value) {
         screen.value = screen.value.slice(0, -1);
     } 
     else if (value === "=") {
+    try {
+        let result = eval(screen.value);
         
-        try {
-            screen.value = eval(screen.value)
-        } catch {
-            screen.value = "Error";
-        }
-    } 
+        screen.value = parseFloat(result.toFixed(6)); 
+    } catch {
+        screen.value = "Error";
+    }
+    }
     else if (value === "M+") {
         
         memory += Number(screen.value || 0);
