@@ -20,10 +20,12 @@ function item(value) {
     else if (value === "M+") {
         
         memory += Number(screen.value || 0);
+        screen.value = "";
     } 
     else if (value === "M-") {
         
         memory -= Number(screen.value || 0);
+        screen.value = "";
     } 
     else if (value === "M") {
         
