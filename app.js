@@ -42,9 +42,15 @@ function item(value) {
         screen.value = Math.sqrt(eval(screen.value));
         let result = eval(screen.value);
         screen.value = parseFloat(result.toFixed(6));
+        if(screen.value=NaN){
+            screen.value = "";
+        }
     }
     else if(value==="^2"){
         screen.value = eval((screen.value))**2;
+        if(screen.value=NaN){
+            screen.value = "";
+        }
     }
     else {
         
