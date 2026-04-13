@@ -38,20 +38,22 @@ function item(value) {
         screen.value = "";
         memory=""
     }
-    else if(value==="sqrt"){
-        screen.value = Math.sqrt(eval(screen.value));
-        let result = eval(screen.value);
+    else if (value === "sqrt") {
+    let result = Math.sqrt(eval(screen.value));
+    if (isNaN(result)) {
+        screen.value = "";
+    } else {
         screen.value = parseFloat(result.toFixed(6));
-        if(screen.value=NaN){
-            screen.value = "";
-        }
     }
-    else if(value==="^2"){
-        screen.value = eval((screen.value))**2;
-        if(screen.value=NaN){
-            screen.value = "";
-        }
+}
+else if (value === "^2") {
+    let result = eval(screen.value) ** 2;
+    if (isNaN(result)) {
+        screen.value = "";
+    } else {
+        screen.value = result;
     }
+}
     else {
         
         screen.value += value;
